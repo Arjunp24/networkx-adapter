@@ -91,7 +91,7 @@ class DGLArangoDB_Networkx_Adapter(ArangoDB_Networkx_Adapter):
                 dict_desc[fgk] = sgdata[ename]
                 dict_desc[rgk] = rsgdata[redge]
 
-            g = dgl.heterograph(dict_desc)
+            g = dgl.from_networkx(dict_desc)
 
             for v in vnames:
                 rndata = np.asarray(node_data[v], dtype=int)
